@@ -12,6 +12,8 @@
     <modules>
         <module>business</module>
         <module>processing</module>
+        <module>dataservice</module>
+        <module>clientservice</module>
         <module>distribution</module>
     </modules>
 

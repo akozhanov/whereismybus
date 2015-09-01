@@ -23,11 +23,15 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="business" />
+        <module name="clientservice" />
+        <module name="dataservice" />
         <module name="processing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="business" target="1.5" />
+      <module name="clientservice" target="1.5" />
+      <module name="dataservice" target="1.5" />
       <module name="distribution" target="1.5" />
       <module name="processing" target="1.5" />
       <module name="whereismybus" target="1.5" />
