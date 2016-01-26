@@ -26,14 +26,16 @@
         <module name="clientservice" />
         <module name="dataservice" />
         <module name="processing" />
+        <module name="tools" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="business" target="1.5" />
       <module name="clientservice" target="1.5" />
       <module name="dataservice" target="1.5" />
       <module name="distribution" target="1.5" />
       <module name="processing" target="1.5" />
+      <module name="tools" target="1.8" />
       <module name="whereismybus" target="1.5" />
     </bytecodeTargetLevel>
   </component>

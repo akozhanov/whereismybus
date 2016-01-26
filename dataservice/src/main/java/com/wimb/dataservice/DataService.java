@@ -35,7 +35,7 @@ public class DataService {
                     Statement stmt = conn.createStatement();
                     String sql = mapToSqlInsert(params);
                     stmt.executeUpdate(sql);
-                    logger.log(Level.FINE, "logged {0}:{1}", new Object[]{httpExchange.getRemoteAddress(), httpExchange.getRequestURI().getQuery()});
+                    logger.log(Level.SEVERE, "logged {0}:{1}", new Object[]{httpExchange.getRemoteAddress(), httpExchange.getRequestURI().getQuery()});
                 } catch (SQLException e) {
                     logger.log(Level.SEVERE, e.getMessage(), e);
                 }
