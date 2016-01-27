@@ -9,6 +9,11 @@ app.get("/index.html", function (req, res){
     res.sendFile(__dirname + "/" + "index.html");
 });
 
+app.get("/bus4.png", function (req, res){
+    console.log("got icon request");
+    res.sendFile(__dirname + "/" + "bus4.png");
+});
+
 app.get("/data.html", function (req, res){
     var connection = mysql.createConnection({
       host     : 'localhost',
@@ -23,14 +28,14 @@ app.get("/data.html", function (req, res){
       console.log('connected');
     });
 
-    connection.query('SELECT lat, lon from bus_data where local_time = (select max(local_time) from bus_data)', function(err, rows, fields) {
+    connection.query('SELECT lat, lon, serialno from bus_data where local_time = (select max(local_time) from bus_data)', function(err, rows, fields) {
       if (err) throw err;
       if (rows.length == 0) {
         connection.end();
         console.log('no data');
-        res.send("{lat: 50.607058, lng: 30.294730}");
+        res.send("{lat: 50.607058, lng: 30.294730, ser: 'XXX'}");
       }else{
-        var data = '{"lat": ' + rows[0].lat + ', "lng": ' + rows[0].lon + '}';
+        var data = '{"lat": ' + rows[0].lat + ', "lng": ' + rows[0].lon + ', "ser": "' + rows[0].serialno + '"}';
         connection.end();
         console.log('sending: ', data);
         res.send(data);
