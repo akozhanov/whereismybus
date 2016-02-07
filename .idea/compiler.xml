@@ -36,7 +36,7 @@
       <module name="dataservice" target="1.5" />
       <module name="distribution" target="1.5" />
       <module name="processing" target="1.5" />
-      <module name="tools" target="1.8" />
+      <module name="tools" target="1.4" />
       <module name="whereismybus" target="1.5" />
     </bytecodeTargetLevel>
   </component>

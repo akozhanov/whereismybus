@@ -18,10 +18,11 @@ public class BusEmul {
 
     private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
     private static CloseableHttpClient httpclient = HttpClients.createDefault();
+    public static final String TEMPLATE = "http://52.91.78.202:10000/data/226?time=%s&lat=%s&long=%s&s=%s&dir=%s&sat=%s&alt=%s&acc=%s&prov=%s&batt=%s&aid=%s&ser=%s";
 
     public static void main(String[] args) {
 
-        try (Stream<String> stream = Files.lines(Paths.get("./data-files/odessa.txt"), Charset.defaultCharset())) {
+        try (Stream<String> stream = Files.lines(Paths.get("./data-files/nivki-moschun.txt"), Charset.defaultCharset())) {
             stream.forEach(BusEmul::send);
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,21 +54,37 @@ public class BusEmul {
 
     private static String buildUrl(String line) {
         String[] data = line.split(";");
-
-        String template = "http://54.173.153.91:10000/data/226?time=%s&lat=%s&long=%s&s=%s&dir=%s&sat=%s&alt=%s&acc=%s&prov=%s&batt=%s&aid=%s&ser=%s";
-        String localTime = df.format(new Date());
-        String latitude = data[3];
-        String longtitude = data[4];
-        String speed = data[5];
-        String direction = data[6];
-        String satellites = "21";
-        String altitude = data[7];
-        String accuracy = data[8];
-        String provider = data[9];
-        String battery = data[11];
-        String android_id = data[10];
-        String serial_no = data[2];
-        return String.format(template, localTime, latitude, longtitude, speed, direction, satellites, altitude, accuracy, provider, battery, android_id, serial_no);
+        if (data.length == 14) {
+            String localTime = df.format(new Date());
+            String latitude = data[3];
+            String longtitude = data[4];
+            String speed = data[5];
+            String direction = data[6];
+            String satellites = "21";
+            String altitude = data[7];
+            String accuracy = data[8];
+            String provider = data[9];
+            String battery = data[11];
+            String android_id = data[10];
+            String serial_no = data[2];
+            return String.format(TEMPLATE, localTime, latitude, longtitude, speed, direction, satellites, altitude, accuracy, provider, battery, android_id, serial_no);
+        }
+        if (data.length == 7) {
+            String localTime = df.format(new Date());
+            String latitude = data[1];
+            String longtitude = data[2];
+            String speed = data[6];
+            String direction = data[5];
+            String satellites = "21";
+            String altitude = data[3];
+            String accuracy = data[4];
+            String provider = "n/a";
+            String battery = "101";
+            String android_id = "n/a";
+            String serial_no = "n/a";
+            return String.format(TEMPLATE, localTime, latitude, longtitude, speed, direction, satellites, altitude, accuracy, provider, battery, android_id, serial_no);
+        }
+        throw new RuntimeException("unknown data file format");
     }
 
 }
