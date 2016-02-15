@@ -11,14 +11,18 @@
 <div id="map"></div>
 <div id="data"></div>
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8qQTZlkZC7Fiz1M9UNp65mAXJWR18joI&callback=initMap">
+</script>
 
 <script type="text/javascript">
 
 var map;
+var current_marker;
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 50.607058, lng: 30.294730},
-    zoom: 8
+    center: {lat: 50.5407323, lng: 30.353164700000004},
+    zoom: 17
   });
 }
 
@@ -28,11 +32,13 @@ function get_data(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       var loc = JSON.parse(xhttp.responseText);
       map.setCenter({lat: loc.lat, lng: loc.lng});
-      var marker = new google.maps.Marker({
+      var bus_icon = {url: 'bus55.png', scaledSize: new google.maps.Size(60,60)};
+      if (current_marker) current_marker.setMap(null);
+      current_marker = new google.maps.Marker({
         position: {lat: loc.lat, lng: loc.lng},
         map: map,
+        icon: bus_icon,
         title: loc.ser,
-//        icon: {url: 'bus4.png', size: {width: 100, height: 100}}
       });
     }
   };
@@ -40,10 +46,33 @@ function get_data(){
   xhttp.send();
 }
 
+function get_route(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      var bus_stop_icon = {url: 'bus-stop.png', scaledSize: new google.maps.Size(40,40)};
+      var route = JSON.parse(xhttp.responseText);
+      for (var i = 0; i < route.directions[0].points.length; i++){
+          var point = route.directions[0].points[i];
+          if (point.type == "bus-stop"){
+              current_marker = new google.maps.Marker({
+                position: {lat: point.lat, lng: point.lon},
+                map: map,
+                icon: bus_stop_icon,
+                title: point.name,
+              });
+          };
+      }
+    }
+  };
+  xhttp.open("GET", "/route.html", true);
+  xhttp.send();
+}
+
+setTimeout(get_route(),2000);
 setInterval(get_data, 2000);
+
     </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8qQTZlkZC7Fiz1M9UNp65mAXJWR18joI&callback=initMap">
-</script>
 
 </body>
 </html>

@@ -31,13 +31,13 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="business" target="1.5" />
-      <module name="clientservice" target="1.5" />
-      <module name="dataservice" target="1.5" />
-      <module name="distribution" target="1.5" />
-      <module name="processing" target="1.5" />
-      <module name="tools" target="1.4" />
-      <module name="whereismybus" target="1.5" />
+      <module name="business" target="1.8" />
+      <module name="clientservice" target="1.8" />
+      <module name="dataservice" target="1.8" />
+      <module name="distribution" target="1.8" />
+      <module name="processing" target="1.8" />
+      <module name="tools" target="1.8" />
+      <module name="whereismybus" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
