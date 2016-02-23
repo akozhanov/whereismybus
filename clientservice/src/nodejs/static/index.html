@@ -18,59 +18,85 @@
 
 var map;
 var current_marker;
+var prev_marker;
+var next_marker;
+var bus_stop_icon = {url: 'bus-stop.png'};
+var bus_icon = {url: 'bus55.png'};
+var bus_route_icon = {url: 'bus-route.png'};
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 50.5407323, lng: 30.353164700000004},
-    zoom: 17
-  });
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 50.5407323, lng: 30.353164700000004},
+        zoom: 17
+    });
+    setTimeout(get_route(), 1000);
+    setInterval(get_data, 2000);
 }
 
 function get_data(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var loc = JSON.parse(xhttp.responseText);
-      map.setCenter({lat: loc.lat, lng: loc.lng});
-      var bus_icon = {url: 'bus55.png', scaledSize: new google.maps.Size(60,60)};
-      if (current_marker) current_marker.setMap(null);
-      current_marker = new google.maps.Marker({
-        position: {lat: loc.lat, lng: loc.lng},
-        map: map,
-        icon: bus_icon,
-        title: loc.ser,
-      });
-    }
-  };
-  xhttp.open("GET", "/data.html", true);
-  xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var data = JSON.parse(xhttp.responseText);
+            map.setCenter({lat: data.location.latitude, lng: data.location.longitude});
+            if (current_marker) current_marker.setMap(null);
+            current_marker = new google.maps.Marker({
+                position: {lat: data.location.latitude, lng: data.location.longitude},
+                map: map,
+                icon: bus_icon,
+                title: data.location.serial
+            });
+            if (prev_marker) prev_marker.setMap(null);
+            if (typeof data.prevRouteMarker != 'undefined'){
+                prev_marker = new google.maps.Marker({
+                    position: {lat: data.prevRouteMarker.lat, lng: data.prevRouteMarker.lon},
+                    map: map,
+                    title: data.prevRouteMarker.name
+                });
+            }
+            if (next_marker) next_marker.setMap(null);
+            if (typeof data.next != 'undefined'){
+                next_marker = new google.maps.Marker({
+                    position: {lat: data.nextRouteMarker.lat, lng: data.nextRouteMarker.lon},
+                    map: map,
+                    title: data.nextRouteMarker.name
+                });
+            }
+        }
+    };
+    xhttp.open("GET", "/data.html", true);
+    xhttp.send();
 }
 
 function get_route(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var bus_stop_icon = {url: 'bus-stop.png', scaledSize: new google.maps.Size(40,40)};
-      var route = JSON.parse(xhttp.responseText);
-      for (var i = 0; i < route.directions[0].points.length; i++){
-          var point = route.directions[0].points[i];
-          if (point.type == "bus-stop"){
-              current_marker = new google.maps.Marker({
-                position: {lat: point.lat, lng: point.lon},
-                map: map,
-                icon: bus_stop_icon,
-                title: point.name,
-              });
-          };
-      }
-    }
-  };
-  xhttp.open("GET", "/route.html", true);
-  xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var route = JSON.parse(xhttp.responseText);
+            for (var i = 0; i < route.directions[0].points.length; i++) {
+                var point = route.directions[0].points[i];
+                if (point.type == "bus-stop") {
+                    new google.maps.Marker({
+                        position: {lat: point.lat, lng: point.lon},
+                        map: map,
+                        icon: bus_stop_icon,
+                        title: point.name
+                    });
+                }
+                if (point.type == "route-marker") {
+                    new google.maps.Marker({
+                        position: {lat: point.lat, lng: point.lon},
+                        map: map,
+                        icon: bus_route_icon,
+                        title: point.name
+                    });
+                }
+            }
+        }
+    };
+    xhttp.open("GET", "/route.html", true);
+    xhttp.send();
 }
-
-setTimeout(get_route(),2000);
-setInterval(get_data, 2000);
 
     </script>
 

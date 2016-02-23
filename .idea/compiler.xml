@@ -23,22 +23,39 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="business" />
         <module name="clientservice" />
-        <module name="dataservice" />
         <module name="processing" />
+      </profile>
+      <profile default="false" name="Annotation profile for tools" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="tools" />
+      </profile>
+      <profile default="false" name="Annotation profile for dataservice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="dataservice" />
+      </profile>
+      <profile default="false" name="Annotation profile for business" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="business" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="business" target="1.8" />
-      <module name="clientservice" target="1.8" />
+      <module name="clientservice" target="1.5" />
       <module name="dataservice" target="1.8" />
-      <module name="distribution" target="1.8" />
-      <module name="processing" target="1.8" />
+      <module name="distribution" target="1.5" />
+      <module name="processing" target="1.5" />
       <module name="tools" target="1.8" />
-      <module name="whereismybus" target="1.8" />
+      <module name="whereismybus" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
-
