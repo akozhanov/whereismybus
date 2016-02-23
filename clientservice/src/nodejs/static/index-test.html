@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="data"></div>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8qQTZlkZC7Fiz1M9UNp65mAXJWR18joI&callback=initMap">
+</script>
+
+<script type="text/javascript">
+
+    var map;
+    var bus_stop_icon = {url: 'bus-stop.png'};
+    var bus_icon = {url: 'bus55.png'};
+    var bus_route_icon = {url: 'bus-route.png'};
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16
+        });
+//        get_data();
+        var loc = { latitude: 50.498847, longitude: 30.365393, serial: "xxx" };
+        var poly = [ { latitude: 50.4989017, longitude: 30.365310899999997 },
+            { latitude: 50.4989017, longitude: 30.3653869 },
+            { latitude: 50.4988179, longitude: 30.3653869 },
+            { latitude: 50.4988179, longitude: 30.365310899999997 } ];
+        new google.maps.Marker({
+            position: {lat: loc.latitude, lng: loc.longitude},
+            map: map,
+            title: loc.serial
+        });
+        map.setCenter({lat: loc.latitude, lng: loc.longitude});
+        for (var i = 0; i < poly.length; i++){
+            new google.maps.Marker({
+                position: {lat: poly[i].latitude, lng: poly[i].longitude},
+                map: map,
+                title: ""+i
+            });
+        }
+    }
+
+    function get_data() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var data = JSON.parse(xhttp.responseText);
+                map.setCenter({lat: data.location.latitude, lng: data.location.longitude});
+                new google.maps.Marker({
+                    position: {lat: data.location.latitude, lng: data.location.longitude},
+                    map: map,
+                    icon: bus_icon,
+                    title: data.location.serial
+                });
+                if (typeof data.prevRouteMarker != 'undefined'){
+                    new google.maps.Marker({
+                        position: {lat: data.prevRouteMarker.lat, lng: data.prevRouteMarker.lon},
+                        map: map,
+                        title: data.prevRouteMarker.name
+                    });
+                }
+                if (typeof data.next != 'undefined'){
+                    new google.maps.Marker({
+                        position: {lat: data.nextRouteMarker.lat, lng: data.nextRouteMarker.lon},
+                        map: map,
+                        title: data.nextRouteMarker.name
+                    });
+                }
+            }
+        };
+        xhttp.open("GET", "/data.html", true);
+        xhttp.send();
+    }
+
+</script>
+
+</body>
+</html>
