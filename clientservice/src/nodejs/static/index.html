@@ -22,7 +22,8 @@ var prev_marker;
 var next_marker;
 var bus_stop_icon = {url: 'bus-stop.png'};
 var bus_icon = {url: 'bus55.png'};
-var bus_route_icon = {url: 'bus-route.png'};
+var bus_route_icon = {url: 'calibration-small.png'};
+var current_bus_route_icon = {url: 'calibration-big.png'};
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -51,15 +52,17 @@ function get_data(){
                 prev_marker = new google.maps.Marker({
                     position: {lat: data.prevRouteMarker.lat, lng: data.prevRouteMarker.lon},
                     map: map,
-                    title: data.prevRouteMarker.name
+                    icon: current_bus_route_icon,
+                    title: "prev:" + data.prevRouteMarker.name
                 });
             }
             if (next_marker) next_marker.setMap(null);
-            if (typeof data.next != 'undefined'){
+            if (typeof data.nextRouteMarker != 'undefined'){
                 next_marker = new google.maps.Marker({
                     position: {lat: data.nextRouteMarker.lat, lng: data.nextRouteMarker.lon},
                     map: map,
-                    title: data.nextRouteMarker.name
+                    icon: current_bus_route_icon,
+                    title: "next:" + data.nextRouteMarker.name
                 });
             }
         }
