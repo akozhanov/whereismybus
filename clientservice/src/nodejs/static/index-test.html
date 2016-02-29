@@ -28,29 +28,92 @@
     var map;
     var bus_stop_icon = {url: 'bus-stop.png'};
     var bus_icon = {url: 'bus55.png'};
-    var bus_route_icon = {url: 'bus-route.png'};
+    var bus_route_icon = {url: 'calibration-small.png'};
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16
         });
-//        get_data();
-        var loc = { latitude: 50.498847, longitude: 30.365393, serial: "xxx" };
-        var poly = [ { latitude: 50.4989017, longitude: 30.365310899999997 },
-            { latitude: 50.4989017, longitude: 30.3653869 },
-            { latitude: 50.4988179, longitude: 30.3653869 },
-            { latitude: 50.4988179, longitude: 30.365310899999997 } ];
+        showDebugObj();
+    }
+
+    function showDebugObj(){
+        var debugObj = { loc: { latitude: 50.605585, longitude: 30.313385, serial: 'xxx' },
+            near:
+            { id: 481,
+                idx: 480,
+                name: 'Point 448',
+                lat: 50.605624999999996,
+                lon: 30.313381,
+                type: 'route-marker' },
+            prevToNear:
+            { id: 480,
+                idx: 479,
+                name: 'Point 447',
+                lat: 50.6054635,
+                lon: 30.313977599999998,
+                type: 'route-marker' },
+            nextToNear:
+            { id: 482,
+                idx: 481,
+                name: 'Point 449',
+                lat: 50.60562818919491,
+                lon: 30.313373132654842,
+                type: 'route-marker' } };
+        new google.maps.Marker({
+            position: {lat: debugObj.loc.latitude, lng: debugObj.loc.longitude},
+            map: map,
+            title: debugObj.loc.serial,
+            icon: bus_route_icon
+        });
+        map.setCenter({lat: debugObj.loc.latitude, lng: debugObj.loc.longitude});
+
+        new google.maps.Marker({
+            position: {lat: debugObj.near.lat, lng:  debugObj.near.lon},
+            map: map,
+            title: "near: " + debugObj.near.name,
+            icon: bus_route_icon
+        });
+        new google.maps.Marker({
+            position: {lat: debugObj.prevToNear.lat, lng:  debugObj.prevToNear.lon},
+            map: map,
+            title: "prevToNear: " + debugObj.prevToNear.name,
+            icon: bus_route_icon
+        });
+        new google.maps.Marker({
+            position: {lat: debugObj.nextToNear.lat, lng:  debugObj.nextToNear.lon},
+            map: map,
+            title: "nextToNear: " + debugObj.nextToNear.name,
+            icon: bus_route_icon
+        });
+    }
+
+    function showPoly() {
+        var loc = {latitude: 50.605146, longitude: 30.315128, serial: "xxx"};
+        var poly = [
+            {latitude: 50.605118795809545, longitude: 30.315219101133817},
+            {latitude: 50.605118795809545, longitude: 30.31581939886619},
+            {latitude: 50.604764404168954, longitude: 30.315819398488873},
+            {latitude: 50.604764404168954, longitude: 30.315219101511133},
+            {latitude: 50.60516079580955, longitude: 30.3151561010891},
+            {latitude: 50.60516079580955, longitude: 30.315319298910914},
+            {latitude: 50.605055204168956, longitude: 30.315319298798492},
+            {latitude: 50.605055204168956, longitude: 30.315156101201516}
+        ];
+
         new google.maps.Marker({
             position: {lat: loc.latitude, lng: loc.longitude},
             map: map,
-            title: loc.serial
+            title: loc.serial,
+            icon: bus_route_icon
         });
         map.setCenter({lat: loc.latitude, lng: loc.longitude});
-        for (var i = 0; i < poly.length; i++){
+        for (var i = 0; i < poly.length; i++) {
             new google.maps.Marker({
                 position: {lat: poly[i].latitude, lng: poly[i].longitude},
                 map: map,
-                title: ""+i
+                title: "" + i,
+                icon: bus_route_icon
             });
         }
     }

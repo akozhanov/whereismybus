@@ -155,8 +155,8 @@ app.get("/bus-stop.png", function (req, res) {
     res.sendFile(__dirname + "/" + "bus-stop.png");
 });
 
-app.get("/bus-route.png", function (req, res) {
-    res.sendFile(__dirname + "/" + "bus-route.png");
+app.get("/calibration-small.png", function (req, res) {
+    res.sendFile(__dirname + "/" + "calibration-small.png");
 });
 
 app.get("/bus55.png", function (req, res) {

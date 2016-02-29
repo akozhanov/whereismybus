@@ -1,5 +1,8 @@
 exports.loc1 = {latitude: 50.568309, longitude: 30.32184, serial: "serial #"};
 exports.loc2 = { latitude: 50.498847, longitude: 30.365393, serial: "xxx" };
+exports.loc3 = { latitude: 50.606173, longitude: 30.309735, serial: "xxx" };
+exports.loc4 = { latitude: 50.605585, longitude: 30.313385, serial: "xxx" };
+exports.loc5 = { latitude: 50.605146, longitude: 30.315128, serial: "xxx" };
 
 exports.route = {
     "id": 1,
