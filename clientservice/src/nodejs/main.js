@@ -91,7 +91,8 @@ function getRouteData(con, callback) {
 }
 
 function getRouteDirectionData(route, con, callback) {
-    con.query("select id, name from route_direction where route_id = " + route.id, function (err, rows, fields) {
+    //con.query("select id, name from route_direction where route_id = " + route.id, function (err, rows, fields) {
+    con.query("select id, name from route_direction where id = 2", function (err, rows, fields) {
         if (err) throw err;
         if (rows.length == 0) {
             callback(new Error("no route directions"));

@@ -1,0 +1,659 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml>
+	<Document>
+		<name>Route 226 - forward</name>
+		<Placemark>
+			<name>ст. м. Нивки</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405489199999998,50.459157,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 2</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405162,50.458836,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 3</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4053336,50.458491,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 4</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4063851,50.4585593,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 5</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4064361,50.4589794,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 6</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4059184,50.4594814,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Естонська</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4059023,50.464573,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Краснодарська</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405832500000002,50.4681584,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Вільгельма Піка </name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405816399999996,50.4702617,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Салютна</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405821799999995,50.4724263,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Поліклініка</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4058057,50.477042100000006,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Стеценка</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405821799999995,50.480606,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 14</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.405816399999996,50.4818144,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 15</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4046953,50.48230600000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>пл. Інтернаціональна</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.4033917,50.4826405,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Сади</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3968096,50.4861971,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Міське кладовище</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.393387100000005,50.4876853,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>АТП-5</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3884894,50.4896136,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>АЗС (на вимогу)</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.383430700000005,50.4915931,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Газопровідна </name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.378205800000003,50.49365780000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>селище Берковці</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.369751499999996,50.496944,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 23</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.366532800000005,50.4981281,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 24</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3651649,50.4991348,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Лісорозсадник</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3650254,50.5003461,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>КПП ДАІ</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3618926,50.5165886,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 27</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.361994499999998,50.5232464,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 28</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3626543,50.5241058,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Міська</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3662539,50.52604290000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 30</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.366983400000002,50.5264351,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>1-а лінія</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3646365,50.5282221,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Госпіталь інвалідів ВВВ</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.359060200000002,50.5324096,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Школа-інтернат </name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.355702000000004,50.534943,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 34</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3543878,50.535942000000006,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 35</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3559703,50.5367774,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 36</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.356039999999997,50.53693760000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Юнкерова</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3556269,50.5373843,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 38</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.352000600000004,50.5400879,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>7-а лінія</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.353164700000004,50.5407323,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 40</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3537172,50.54101180000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Дитячий садок</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3503269,50.5435721,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Лісова</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.347215500000004,50.5459208,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Центр медичної реабілітації (на вимогу) </name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3437769,50.5484706,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>13-а лiнiя</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.340901600000002,50.550672600000006,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 45</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.336931899999996,50.5536549,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Селянська</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.335102700000004,50.5527108,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 47</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.333589900000003,50.5519064,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 48</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3305161,50.5545241,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 49</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.328665400000002,50.5568961,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 50</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.328896,50.5585899,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 51</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3287244,50.5591761,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Київська</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.326857599999997,50.5606687,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 53</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3233922,50.5629315,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>на вимогу</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.323322400000002,50.563095,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 55</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3234029,50.5633744,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 56</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.323354600000002,50.56409,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 57</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3228664,50.5647647,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 58</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.319127399999996,50.56626740000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Садова</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.319411800000005,50.5665093,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 60</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3231937,50.5694055,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 61</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.325377,50.5736643,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 62</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3255808,50.5760593,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 63</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3234243,50.5785086,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 64</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3229308,50.5799938,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 65</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3238535,50.5833729,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 66</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.324068100000005,50.5910974,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 67</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3230596,50.592786600000004,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 68</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.322727000000004,50.5952316,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 69</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3212786,50.598201,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>на вимогу</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3214878,50.6009896,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 71</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.321214200000004,50.6013812,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 72</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.321305400000004,50.6017081,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 73</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.321643400000003,50.6019464,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>вул. Лісова</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3216273,50.60216090000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 75</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3194493,50.6035466,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>на вимогу</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3163218,50.6044965,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 77</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3149807,50.6052456,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 78</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3133821,50.6056371,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 79</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.312802799999996,50.6058414,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 80</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3114671,50.6057869,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 81</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.307926499999997,50.6065699,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>с. Мощун </name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3079641,50.6068014,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 83</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.307937300000003,50.6075096,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 84</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3075993,50.60792150000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 85</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.302331400000003,50.610999,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 86</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.3015643,50.61154020000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 87</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.299702900000003,50.6133137,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>с. Мощун (дачі)</name>
+			<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+			<Point>
+				<coordinates>30.297718000000003,50.613926400000004,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Style id='icon-503-DB4436-nodesc-normal'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='icon-503-DB4436-nodesc-highlight'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='icon-503-DB4436-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-503-DB4436-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-503-DB4436-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+	</Document>
+</kml>

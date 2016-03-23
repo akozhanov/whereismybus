@@ -22,7 +22,7 @@ public class InitData {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/wimb?user=root&password=&useUnicode=true&characterEncoding=utf-8");
             logger.info("DB has been connected");
-            try (Stream<String> stream = Files.lines(Paths.get("./data-files/route-226-def.txt"), Charset.forName("utf-8"))) {
+            try (Stream<String> stream = Files.lines(Paths.get("./data-files/routes/defs/route-226-back-def.txt"), Charset.forName("utf-8"))) {
                 stream.forEach(InitData::storeLine);
             } catch (IOException e) {
                 e.printStackTrace();

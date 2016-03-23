@@ -11,6 +11,7 @@ import org.dom4j.io.SAXReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -26,34 +27,82 @@ public class RouteByPoints {
                 .setConnectTimeout(2, TimeUnit.SECONDS)
                 .setReadTimeout(2, TimeUnit.SECONDS)
                 .setWriteTimeout(2, TimeUnit.SECONDS);
-        File inputFile = new File("./data-files/routes/google-map/Route 226 - backward.kml");
+
+        FileWriter fw = new FileWriter("./data-files/routes/defs/route-226-back-def.txt",false);
+
+        fw.write("route;226;Нивки - Мощун\n");
+
+        fw.write("route-direction;Нивки - Мощун\n");
+
+        File inputFile = new File("./data-files/routes/google-map/Route 226 - forward.kml");
+
+        logRouteFromKML(context, fw, inputFile, true);
+
+        fw.write("route-direction;Мощун - Нивки\n");
+
+        inputFile = new File("./data-files/routes/google-map/Route 226 - backward.kml");
+
+        logRouteFromKML(context, fw, inputFile, false);
+
+        fw.close();
+    }
+
+    private static void logRouteFromKML(GeoApiContext context, FileWriter fw, File inputFile, boolean forward) throws Exception {
         SAXReader reader = new SAXReader();
         Document document = reader.read(inputFile);
         List<Node> nodes = document.selectNodes("/kml/Document/Placemark");
         Node prevNode = null;
         int counter = 0;
-        FileWriter fw = new FileWriter("./data-files/routes/defs/route-226-back-def.txt",false);
-        for (int i = nodes.size()-1; i >= 0 ; i--) {
-            Node node =  nodes.get(i);
-            if (prevNode != null){
-                String prevPointName = prevNode.selectSingleNode("name").getText();
-                LatLng prevPoint = getLatLng(prevNode);
-                LatLng point = getLatLng(node);
-                if (!prevPointName.startsWith("Point"))
-                    fw.write(String.format("bus-stop;%s;%s;%s\n",prevPoint.lat,prevPoint.lng,prevPointName));
-                else
-                    fw.write(String.format("route-marker;%s;%s;Point %s\n",prevPoint.lat,prevPoint.lng,++counter));
-                SnappedPoint[] snappedPoints = RoadsApi.snapToRoads(context,true,new LatLng[]{prevPoint,point}).await();
-                for (SnappedPoint snappedPoint :snappedPoints) {
-                    fw.write(String.format("route-marker;%s;%s;Point %s\n",snappedPoint.location.lat,snappedPoint.location.lng,++counter));
+        if (!forward)
+            for (int i = nodes.size()-1; i >= 0 ; i--) {
+                Node node =  nodes.get(i);
+                if (i == nodes.size()-1){ // last node
+                    prevNode = node;
                 }
-                fw.flush();
-                prevNode = node;
-            } else {
-                prevNode = node;
+                if (i > 0 && i < nodes.size()-1){ // interim node
+                    counter = logRouteForKMLPoints(context, fw, prevNode, counter, node, false);
+                    prevNode = node;
+                }
+                if (i == 0){ // 1st node
+                    counter = logRouteForKMLPoints(context, fw, prevNode, counter, node, true);
+                }
             }
+        else
+            for (int i = 0; i < nodes.size(); i++) {
+                Node node =  nodes.get(i);
+                if (i == 0){ // 1st node
+                    prevNode = node;
+                }
+                if (i > 0 && i < nodes.size()-1){ // interim node
+                    counter = logRouteForKMLPoints(context, fw, prevNode, counter, node, false);
+                    prevNode = node;
+                }
+                if (i == nodes.size()-1){ // last node
+                    counter = logRouteForKMLPoints(context, fw, prevNode, counter, node, true);
+                }
+            }
+    }
+
+    private static int logRouteForKMLPoints(GeoApiContext context, FileWriter fw, Node prevNode, int counter, Node node, boolean logCurrentNode) throws Exception {
+        String prevPointName = prevNode.selectSingleNode("name").getText();
+        LatLng prevPoint = getLatLng(prevNode);
+        String pointName = node.selectSingleNode("name").getText();
+        LatLng point = getLatLng(node);
+        if (!prevPointName.startsWith("Point"))
+            fw.write(String.format("bus-stop;%s;%s;%s\n",prevPoint.lat,prevPoint.lng,prevPointName));
+        else
+            fw.write(String.format("route-marker;%s;%s;Point %s\n",prevPoint.lat,prevPoint.lng,++counter));
+        SnappedPoint[] snappedPoints = RoadsApi.snapToRoads(context,true,new LatLng[]{prevPoint,point}).await();
+        for (SnappedPoint snappedPoint :snappedPoints) {
+            fw.write(String.format("route-marker;%s;%s;Point %s\n",snappedPoint.location.lat,snappedPoint.location.lng,++counter));
         }
-        fw.close();
+        if (logCurrentNode)
+            if (!pointName.startsWith("Point"))
+                fw.write(String.format("bus-stop;%s;%s;%s\n",point.lat,point.lng,pointName));
+            else
+                fw.write(String.format("route-marker;%s;%s;Point %s\n",point.lat,point.lng,++counter));
+        fw.flush();
+        return counter;
     }
 
     private static LatLng getLatLng(Node node) {
