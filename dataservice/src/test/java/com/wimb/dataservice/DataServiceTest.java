@@ -23,6 +23,10 @@ import static junit.framework.Assert.assertEquals;
  * Created by akozhanov on 9/4/2015.
  */
 public class DataServiceTest {
+
+    @Test
+    public void myTest(){}
+
     @Test
     public void testPrepareInsertStatement() {
 
