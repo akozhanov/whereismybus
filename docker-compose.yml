@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql
+    container_name: wimb-mysql
+    ports:
+      - 6603:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "dat1a57"
+      MYSQL_DATABASE: "wimb"
+#      MYSQL_ROOT_HOST: "172.17.0.1"
+    volumes:
+      - ./src/db:/docker-entrypoint-initdb.d
+    networks:
+      - wimb_net
+  wimb-dataservice:
+    depends_on:
+      - mysql
+    image: wimb-dataservice
+    container_name: wimb-dataservice
+    ports:
+      - 10000:10000
+    links:
+      - mysql:mysql
+#    restart: always
+    networks:
+      - wimb_net
+  wimb-test:
+    depends_on:
+      - wimb-dataservice
+    image: wimb-test
+    container_name: wimb-test
+    links:
+      - wimb-dataservice:wimb-dataservice
+    restart: always
+    networks:
+      - wimb_net
+networks:
+  wimb_net:
+    driver: bridge

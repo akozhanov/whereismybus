@@ -90,20 +90,8 @@ CREATE TABLE bus_data (
   battery             INT,
   descr               VARCHAR(1000),
   android_id          VARCHAR(30),
-  bus_id              INT    NOT NULL,
-  gps_device_id       INT    NOT NULL,
-  prev_route_point_id INT,
-  next_route_point_id INT,
-  prev_bus_stop_id    INT,
-  next_bus_stop_id    INT,
-  PRIMARY KEY (id),
-  FOREIGN KEY (bus_id) REFERENCES bus (id),
-  FOREIGN KEY (gps_device_id) REFERENCES gps_device (id),
-  FOREIGN KEY (prev_route_point_id) REFERENCES route_point (id),
-  FOREIGN KEY (next_route_point_id) REFERENCES route_point (id),
-  FOREIGN KEY (prev_bus_stop_id) REFERENCES route_point (id),
-  FOREIGN KEY (next_bus_stop_id) REFERENCES route_point (id),
-  FOREIGN KEY (gps_device_id) REFERENCES gps_device (id)
+  serialno          VARCHAR(30),
+  PRIMARY KEY (id)
 );
 
 USE mysql;
