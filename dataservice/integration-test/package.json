@@ -1,0 +1,9 @@
+{
+  "name": "wimb-dataservice-integration-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "tape": "4.7.0",
+    "request-promise": "4.2.1"
+  }
+}
