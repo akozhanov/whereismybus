@@ -9,7 +9,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "dat1a57"
       MYSQL_DATABASE: "wimb"
-#      MYSQL_ROOT_HOST: "172.17.0.1"
     volumes:
       - ./src/db:/docker-entrypoint-initdb.d
     networks:
@@ -23,7 +22,6 @@ services:
       - 10000:10000
     links:
       - mysql:mysql
-#    restart: always
     networks:
       - wimb_net
   wimb-test:
@@ -33,7 +31,6 @@ services:
     container_name: wimb-test
     links:
       - wimb-dataservice:wimb-dataservice
-    restart: always
     networks:
       - wimb_net
 networks:
