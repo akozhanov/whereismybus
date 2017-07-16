@@ -14,6 +14,7 @@ services:
     networks:
       - wimb_net
   wimb-dataservice:
+    build: .
     depends_on:
       - mysql
     image: wimb-dataservice
@@ -25,6 +26,7 @@ services:
     networks:
       - wimb_net
   wimb-test:
+    build: ./dataservice/integration-test
     depends_on:
       - wimb-dataservice
     image: wimb-test
