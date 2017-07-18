@@ -6,25 +6,25 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 # kill and remove any running containers
 cleanup () {
-  sudo docker-compose -p ci kill
-  sudo docker-compose -p ci rm -f
+  docker-compose -p ci kill
+  docker-compose -p ci rm -f
 }
 # catch unexpected failures, do cleanup and output an error message
 trap 'cleanup ; printf "${RED}Tests Failed For Unexpected Reasons${NC}\n"'\
   HUP INT QUIT PIPE TERM
 # build and run the composed services
-sudo docker-compose -p ci build && sudo docker-compose -p ci up -d
+docker-compose -p ci build && docker-compose -p ci up -d
 if [ $? -ne 0 ] ; then
   printf "${RED}Docker Compose Failed${NC}\n"
   exit -1
 fi
 # wait for the test service to complete and grab the exit code
-TEST_EXIT_CODE=`sudo docker wait wimb-test`
+TEST_EXIT_CODE=`docker wait wimb-test`
 # output the logs for the test (for clarity)
 printf "DATASERVICE LOGS ====================================\n"
-sudo docker logs wimb-dataservice
+docker logs wimb-dataservice
 printf "TEST LOGS ====================================\n"
-sudo docker logs wimb-test
+docker logs wimb-test
 # inspect the output of the test and display respective message
 if [ -z ${TEST_EXIT_CODE+x} ] || [ "$TEST_EXIT_CODE" -ne 0 ] ; then
   printf "${RED}Tests Failed${NC} - Exit Code: $TEST_EXIT_CODE\n"
