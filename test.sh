@@ -40,3 +40,4 @@ fi
 cleanup
 # exit the script with the same code as the test service code
 exit $TEST_EXIT_CODE
+
