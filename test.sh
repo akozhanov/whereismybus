@@ -8,7 +8,11 @@ NC='\033[0m'
 cleanup () {
   docker-compose -p ci kill
   docker-compose -p ci rm -f
-}
+  docker rmi wimb-dataservice
+  docker rmi wimb-test
+  docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi
+  docker volume ls -qf dangling=true | xargs -r docker volume rm
+  }
 # catch unexpected failures, do cleanup and output an error message
 trap 'cleanup ; printf "${RED}Tests Failed For Unexpected Reasons${NC}\n"'\
   HUP INT QUIT PIPE TERM
