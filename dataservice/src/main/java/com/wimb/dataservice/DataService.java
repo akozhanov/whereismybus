@@ -26,7 +26,7 @@ public class DataService {
     private static final Logger logger = Logger.getLogger(DataService.class.getName());
     private static Connection conn = null;
     private static int counter = 0;
-    private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
+    private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSS'Z'");
 
     static class DataHandler implements HttpHandler {
         public void handle(HttpExchange httpExchange) throws IOException {
