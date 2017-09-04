@@ -6,12 +6,10 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 # kill and remove any running containers
 cleanup () {
-  docker-compose -p ci kill
-  docker-compose -p ci rm -f
-  docker rmi wimb-dataservice
-  docker rmi wimb-test
-#  docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi
-#  docker volume ls -qf dangling=true | xargs -r docker volume rm
+#  docker-compose -p ci kill
+#  docker-compose -p ci rm -f
+#  docker rmi wimb-dataservice
+#  docker rmi wimb-test
    docker system prune -f
   }
 # catch unexpected failures, do cleanup and output an error message
