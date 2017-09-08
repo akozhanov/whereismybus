@@ -55,7 +55,7 @@ public class DataService {
         HttpServer server = HttpServer.create(new InetSocketAddress(10000), 0);
         server.createContext("/data/226", new DataHandler());
         server.setExecutor(null); // creates a default executor
-        logger.info("DATA SERVICE HAS BEEN STARTED - UPDATED - AND ONE MORE UPDATE");
+        logger.info("DATA SERVICE HAS BEEN STARTED!");
         server.start();
     }
 
