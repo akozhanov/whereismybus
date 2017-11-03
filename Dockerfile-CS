@@ -1,0 +1,13 @@
+FROM node:6
+
+WORKDIR /usr/src/app
+
+RUN mkdir static
+COPY ./clientservice/src/nodejs/package.json .
+
+RUN npm install
+
+COPY ./clientservice/src/nodejs/*.* ./
+COPY ./clientservice/src/nodejs/static/*.* ./static/
+
+CMD ["node", "main.js"]
