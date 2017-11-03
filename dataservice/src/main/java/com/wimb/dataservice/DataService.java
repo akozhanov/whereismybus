@@ -47,7 +47,7 @@ public class DataService {
         logger.setLevel(Level.FINE);
         try {
             System.out.println("trying to connect");
-            conn = DriverManager.getConnection("jdbc:mysql://mysql:3306/wimb?user=root&password=dat1a57");
+            conn = DriverManager.getConnection("jdbc:mysql://wimb-db:3306/wimb?user=root&password=dat1a57");
             logger.fine("DB has been connected");
         } catch (SQLException e) {
             logger.log(Level.SEVERE, e.getMessage(), e);

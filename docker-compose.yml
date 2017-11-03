@@ -35,6 +35,16 @@ services:
       - wimb-dataservice:wimb-dataservice
     networks:
       - wimb_net
+  wimb-clientservice:
+    build: ./clientservice
+    depends_on:
+      - mysql
+    image: wimb-clientservice
+    container_name: wimb-clientservice
+    links:
+      - mysql:mysql
+    networks:
+      - wimb_net
 networks:
   wimb_net:
     driver: bridge

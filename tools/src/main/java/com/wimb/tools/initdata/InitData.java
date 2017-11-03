@@ -20,7 +20,7 @@ public class InitData {
     public static void main(String[] args) throws SQLException {
         logger.setLevel(Level.INFO);
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/wimb?user=root&password=&useUnicode=true&characterEncoding=utf-8");
+            conn = DriverManager.getConnection("jdbc:mysql://172.17.0.2/wimb?user=root&password=dat1a57&useUnicode=true&characterEncoding=utf-8");
             logger.info("DB has been connected");
             try (Stream<String> stream = Files.lines(Paths.get("./data-files/routes/defs/route-226-back-def.txt"), Charset.forName("utf-8"))) {
                 stream.forEach(InitData::storeLine);

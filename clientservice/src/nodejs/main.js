@@ -9,9 +9,9 @@ var tools = require("./tools.js");
 
 app.get("/data.html", function (req, res) {
     var connection = mysql.createConnection({
-        host: 'localhost',
+        host: 'wimb-db',
         user: 'root',
-        password: '',
+        password: 'dat1a57',
         database: 'wimb'
     });
 
@@ -58,9 +58,9 @@ function readRoute(routeNum) {
 
 function connect(callback) {
     var con = mysql.createConnection({
-        host: 'localhost',
+        host: 'wimb-db',
         user: 'root',
-        password: '',
+        password: 'dat1a57',
         database: 'wimb'
     });
     con.connect(function (err) {
@@ -162,4 +162,3 @@ app.get("/calibration-small.png", function (req, res) {
 app.get("/bus55.png", function (req, res) {
     res.sendFile(__dirname + "/" + "bus55.png");
 });
-

@@ -18,7 +18,7 @@ public class BusEmul {
 
     private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.000'Z'");
     private static CloseableHttpClient httpclient = HttpClients.createDefault();
-    public static final String TEMPLATE = "http://54.146.245.35:10000/data/226?time=%s&lat=%s&long=%s&s=%s&dir=%s&sat=%s&alt=%s&acc=%s&prov=%s&batt=%s&aid=%s&ser=%s";
+    public static final String TEMPLATE = "http://172.18.0.3:10000/data/226?time=%s&lat=%s&long=%s&s=%s&dir=%s&sat=%s&alt=%s&acc=%s&prov=%s&batt=%s&aid=%s&ser=%s";
 
     public static void main(String[] args) {
 
