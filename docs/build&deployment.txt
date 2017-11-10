@@ -1,0 +1,55 @@
+MANUAL & LOCAL:
+mvn package
+
+docker network create wimb-net
+docker build -f Dockerfile-db . -t wimb-db
+docker build -f Dockerfile-DS . -t wimb-ds
+docker build -f Dockerfile-CS . -t wimb-cs
+
+docker run -d -i --name wimb-db --net wimb-net wimb-db
+docker run -d -i --name wimb-ds --net wimb-net wimb-ds
+docker run -d -i --name wimb-cs --net wimb-net wimb-cs
+
+Run tools/InitData
+
+SEMI-AUTOMATED & LOCAL:
+mvn package
+docker-compose -f docker-compose-dev.yml up --build
+docker-compose -f docker-compose-dev.yml stop
+docker-compose -f docker-compose-dev.yml rm
+
+TESTING LOCALLY:
+Find the IP address of wimb-cs in the bridge network
+open [IP address]:8080 - Google Maps will open with the bus route
+
+Then can run tools/BusEmul
+
+USEFUL DOCKER COMMANDS:
+create network:
+docker network create wimb-net
+
+build image:
+docker build -f Dockerfile-db . -t wimb-db
+docker build -f Dockerfile-DS . -t wimb-ds
+docker build -f Dockerfile-CS . -t wimb-cs
+
+run a container in background as service and be interactive (STDIN open) and connect to a network:
+docker run -d -i --name wimb-db --net wimb-net wimb-db
+docker run -d -i --name wimb-ds --net wimb-net wimb-ds
+docker run -d -i --name wimb-cs --net wimb-net wimb-cs
+
+stop a container:
+docker container stop wimb-db
+docker container stop wimb-ds
+
+start a previously stopped container:
+docker start wimb-db
+docker start wimb-ds
+
+remove container even if running:
+docker container rm wimb-db -f
+docker container rm wimb-ds -f
+
+OTHER USEFUL COMMANDS
+connect with mysql with mysql db container
+mysql -h172.17.0.2 -p3306 -uroot -pdat1a57

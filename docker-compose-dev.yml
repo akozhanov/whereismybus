@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  wimb-database:
+    build:
+      context: .
+      dockerfile: Dockerfile-db
+    image: wimb-db
+    container_name: wimb-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "dat1a57"
+      MYSQL_DATABASE: "wimb"
+    volumes:
+      - ./src/db:/docker-entrypoint-initdb.d
+    networks:
+      - wimb-net
+  wimb-dataservice:
+    build:
+      context: .
+      dockerfile: Dockerfile-DS
+    image: wimb-ds
+    container_name: wimb-ds
+    networks:
+      - wimb-net
+  wimb-clientservice:
+    build:
+      context: .
+      dockerfile: Dockerfile-CS
+    image: wimb-cs
+    container_name: wimb-cs
+    networks:
+      - wimb-net
+networks:
+  wimb-net:
+    driver: bridge

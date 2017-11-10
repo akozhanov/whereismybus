@@ -9,5 +9,10 @@ RUN npm install
 
 COPY ./clientservice/src/nodejs/*.* ./
 COPY ./clientservice/src/nodejs/static/*.* ./static/
+COPY ./wait-for-it.sh .
+COPY /clientservice/clientservice-start.sh .
 
-CMD ["node", "main.js"]
+RUN /bin/bash -c 'chmod +x ./wait-for-it.sh'
+RUN /bin/bash -c 'chmod +x ./clientservice-start.sh'
+
+CMD ./clientservice-start.sh
