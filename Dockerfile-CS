@@ -1,18 +1,15 @@
 FROM node:6
 
 WORKDIR /usr/src/app
-
 RUN mkdir static
-COPY ./clientservice/src/nodejs/package.json .
 
+COPY ./clientservice/src/nodejs/package.json .
 RUN npm install
+
+COPY ./wait-for-it.sh /clientservice/clientservice-start.sh ./
+RUN /bin/bash -c 'chmod +x ./wait-for-it.sh' && /bin/bash -c 'chmod +x ./clientservice-start.sh'
 
 COPY ./clientservice/src/nodejs/*.* ./
 COPY ./clientservice/src/nodejs/static/*.* ./static/
-COPY ./wait-for-it.sh .
-COPY /clientservice/clientservice-start.sh .
 
-RUN /bin/bash -c 'chmod +x ./wait-for-it.sh'
-RUN /bin/bash -c 'chmod +x ./clientservice-start.sh'
-
-CMD ./clientservice-start.sh
+ENTRYPOINT ["./clientservice-start.sh"]

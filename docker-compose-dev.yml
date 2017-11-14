@@ -22,12 +22,20 @@ services:
     container_name: wimb-ds
     networks:
       - wimb-net
-  wimb-clientservice:
+#  wimb-clientservice:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-CS
+#    image: wimb-cs
+#    container_name: wimb-cs
+#    networks:
+#      - wimb-net
+  wimb-test:
     build:
       context: .
-      dockerfile: Dockerfile-CS
-    image: wimb-cs
-    container_name: wimb-cs
+      dockerfile: Dockerfile-IntTest
+    image: wimb-test
+    container_name: wimb-test
     networks:
       - wimb-net
 networks:

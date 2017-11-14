@@ -1,11 +1,10 @@
 FROM openjdk:latest
 
-COPY ./distribution/target/distribution-1.0-SNAPSHOT-bin/* /usr/src/target/
-COPY ./wait-for-it.sh /usr/src/target/
-COPY /dataservice/dataservice-start.sh /usr/src/target/
+COPY ./wait-for-it.sh ./dataservice/dataservice-start.sh /usr/src/target/
+RUN /bin/bash -c 'chmod +x /usr/src/target/wait-for-it.sh' && /bin/bash -c 'chmod +x /usr/src/target/dataservice-start.sh'
+
 COPY /data-files/routes/defs/route-226-back-def.txt /usr/src/target/
 
-RUN /bin/bash -c 'chmod +x /usr/src/target/wait-for-it.sh'
-RUN /bin/bash -c 'chmod +x /usr/src/target/dataservice-start.sh'
+COPY ./distribution/target/distribution-1.0-SNAPSHOT-bin/* /usr/src/target/
 
-CMD /usr/src/target/dataservice-start.sh
+ENTRYPOINT ["/usr/src/target/dataservice-start.sh"]

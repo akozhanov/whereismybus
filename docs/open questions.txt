@@ -1,0 +1,4 @@
+docker architecture
+types of docker objects
+dependencies/relationships between docker objects
+lifecycle of each docker object

@@ -1,0 +1,14 @@
+FROM mhart/alpine-node
+RUN apk update && apk add bash
+
+WORKDIR /usr/src/app
+
+COPY ./dataservice/integration-test/package.json .
+RUN npm install
+
+COPY ./wait-for-it.sh ./dataservice/integration-test/test-start.sh ./
+RUN /bin/bash -c 'chmod +x ./wait-for-it.sh' && /bin/bash -c 'chmod +x ./test-start.sh'
+
+COPY /dataservice/integration-test/*.* ./
+
+CMD ["/bin/bash","/usr/src/app/test-start.sh"]

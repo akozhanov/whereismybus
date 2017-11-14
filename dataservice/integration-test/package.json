@@ -1,7 +1,7 @@
 {
-  "name": "wimb-dataservice-integration-test",
+  "name": "wimb-ds-integration-test",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "request": "^2.81.0",
     "request-promise": "4.2.1",
